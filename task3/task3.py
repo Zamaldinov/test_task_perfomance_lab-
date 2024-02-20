@@ -1,4 +1,5 @@
 import json
+import sys
 
 
 def tests(tests_dict: list, values_dict: dict) -> list:
@@ -24,10 +25,11 @@ def new_dict(test_dict):
     return id_value
 
 
-with open('tests.json') as file:
+argument_list = sys.argv[1:]
+with open(argument_list[0]) as file:
     data_tests = json.load(file)
 
-with open('values.json') as file:
+with open(argument_list[1]) as file:
     data_values = json.load(file)
 
 id_value_dict = new_dict(data_values['values'])

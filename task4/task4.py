@@ -1,5 +1,8 @@
+import sys
+
+
 def count_step(num_list: list) -> int:
-    num_int_list = [int(num) for num in num_list]
+    num_int_list = [int(num) for num in num_list if num.isdigit()]
     sorted(num_int_list)
     middle = len(num_int_list) // 2
     mid_num = num_int_list[middle]
@@ -12,8 +15,8 @@ def count_step(num_list: list) -> int:
     return result
 
 
-file_name = input('Введите название файла: ')
-with open(file_name, 'r') as file:
+argument_list = sys.argv[1:]
+with open(argument_list[0], 'r') as file:
     numbers = file.read().split('\n')
 
 res = count_step(numbers)

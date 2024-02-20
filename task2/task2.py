@@ -1,3 +1,6 @@
+import sys
+
+
 def location_of_the_point(file_point_radius, file_point):
     point_xc, point_yc, radius = read_first_file(file_point_radius)
     points = read_second_file(file_point)
@@ -31,8 +34,9 @@ def read_second_file(file_name):
     return point_list
 
 
-first_file = input('Введите название первого файла: ')
-second_file = input('Введите название первого файла: ')
+argument_list = sys.argv[1:]
+first_file = argument_list[0]
+second_file = argument_list[1]
 
 
 location_of_the_point(first_file, second_file)

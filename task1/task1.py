@@ -1,3 +1,6 @@
+import sys
+
+
 def collect_result():
     start = 0
     while True:
@@ -9,8 +12,9 @@ def collect_result():
         start = end_index
 
 
-n = int(input('Введите размер массива: '))
-m = int(input('Введите размер шага: '))
+argiment_list = sys.argv[1:]
+n = argiment_list[0]
+m = argiment_list[1]
 result = []
 num_list = list(range(1, n + 1))
 result.append(num_list[0])
